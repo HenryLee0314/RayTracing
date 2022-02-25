@@ -59,6 +59,7 @@ const std::string cubemap_left_path = "/Users/liyiheng/VUW-CGRA/PA/RayTracing/sk
 const std::string cubemap_right_path = "/Users/liyiheng/VUW-CGRA/PA/RayTracing/skybox/right.jpg";
 const std::string cubemap_front_path = "/Users/liyiheng/VUW-CGRA/PA/RayTracing/skybox/front.jpg";
 const std::string cubemap_back_path = "/Users/liyiheng/VUW-CGRA/PA/RayTracing/skybox/back.jpg";
+const std::string cl_file_path = "/Users/liyiheng/VUW-CGRA/PA/RayTracing/src/OpenCL/test.cl";
 const int image_width = 640;
 const int image_height = 480;
 
@@ -404,7 +405,7 @@ int main(int, char**)
 
 
     OpenclManager::getInstance();
-    Renderer renderer_task("/Users/liyiheng/VUW-CGRA/PA/RayTracing/src/OpenCL/test.cl", image_width, image_height);
+    Renderer renderer_task(cl_file_path.c_str(), image_width, image_height);
 
     // Main loop
     while (!glfwWindowShouldClose(window))
