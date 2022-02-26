@@ -117,7 +117,7 @@ public:
             random_number[i] = distribution(generator);
         }
 
-        _cl_mem_random_number = clCreateBuffer(OpenclManager::getInstance()->getContent(), CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, 5 * _width * _height * sizeof(float), (void*)random_number, NULL);
+        _cl_mem_random_number = clCreateBuffer(OpenclManager::getInstance()->getContent(), CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, 3 * _width * _height * sizeof(float), (void*)random_number, NULL);
         _cl_mem_image = clCreateBuffer(OpenclManager::getInstance()->getContent(), CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, 3 * _width * _height * sizeof(float), (void*)temp_color, NULL);
 
         if (render_demo_A) {
